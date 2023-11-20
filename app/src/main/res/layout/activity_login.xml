@@ -5,11 +5,12 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".Login">
+
     <ImageView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:src="@drawable/b2"
-        android:scaleType="centerCrop" />
+        android:scaleType="centerCrop"
+        android:src="@drawable/b2" />
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
@@ -23,7 +24,7 @@
             android:backgroundTint="@color/white"
             android:backgroundTintMode="add"
             android:foregroundTint="@color/white"
-            android:hint="Nombre de Usuario"
+            android:hint="@string/nombreUsuario"
             android:inputType="text"
             android:padding="8dp"
             app:layout_constraintEnd_toEndOf="parent"
@@ -33,12 +34,12 @@
 
         <EditText
             android:id="@+id/passwordEditText"
-            android:layout_width="163dp"
-            android:layout_height="52dp"
+            android:layout_width="207dp"
+            android:layout_height="54dp"
             android:layout_marginTop="32dp"
             android:backgroundTint="@color/white"
             android:backgroundTintMode="add"
-            android:hint="Contraseña"
+            android:hint="@string/clave"
             android:inputType="textPassword"
             android:padding="8dp"
             android:password="true"
@@ -51,8 +52,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="40dp"
-            android:onClick="listado"
-            android:text="Iniciar Sesión"
+            android:onClick="verificarLogin"
+            android:text="@string/iniciarSesion"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.498"
             app:layout_constraintStart_toStartOf="parent"
@@ -74,7 +75,7 @@
             android:clickable="true"
             android:focusable="true"
             android:onClick="registrarUsuario"
-            android:text="Registrar Usuario Nuevo"
+            android:text="@string/registraUsuario"
             android:textAppearance="@style/TextAppearance.AppCompat.Medium"
             android:textColor="@color/white"
             android:textStyle="bold"
