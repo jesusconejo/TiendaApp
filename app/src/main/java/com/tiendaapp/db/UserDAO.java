@@ -8,11 +8,21 @@ import android.database.SQLException;
 import android.database.sqlite.SQLiteDatabase;
 import android.util.Log;
 
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+
 public class UserDAO {
     private SQLiteDatabase database;
     private DBHelper dbHelper;
 
+    private DatabaseReference mDatabase;
+
+    public UserDAO(){
+        mDatabase = FirebaseDatabase.getInstance().getReference();
+    }
+
     public UserDAO(Context context) {
+        mDatabase = FirebaseDatabase.getInstance().getReference();
         dbHelper = new DBHelper(context);
     }
 
@@ -21,6 +31,7 @@ public class UserDAO {
     }
 
     public void close() {
+
         dbHelper.close();
     }
 
@@ -72,6 +83,11 @@ public class UserDAO {
         return contrasena;
     }
 
+    public void writeUser(String nombreUser,String nombre,String email,String contrasena){
+        User user = new User(nombreUser,nombre,email,contrasena);
+        mDatabase.child("users").child(nombreUser).setValue(user);
+
+    }
 
 }
 

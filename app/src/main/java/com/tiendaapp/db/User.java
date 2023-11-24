@@ -8,6 +8,9 @@ public class User {
     private String contrasena;
 
     // Constructor
+    public User(){
+
+    }
     public User(String nombre, String usuario, String correo, String contrasena) {
         this.nombre = nombre;
         this.usuario = usuario;

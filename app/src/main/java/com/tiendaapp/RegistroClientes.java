@@ -53,6 +53,7 @@ public class RegistroClientes extends AppCompatActivity {
         }
         User nuevoUsuario = new User(nombreApellido, nombreUsuario, correo, contrasena);
         long resultado = userDAO.insertUser(nuevoUsuario);
+        userDAO.writeUser(nombreUsuario,nombreApellido,correo,contrasena);
 
         if (resultado > 0) {
             Toast.makeText(this.getApplicationContext(), "Registrado Correctamente", Toast.LENGTH_SHORT).show();
